@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="stylesheets/chatme.css">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    </head>
+    <body>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+                <div class="logo">
+                    <h1>Insucare</h1>
+                </div>
+                    <nav class="menu">
+                        <a href="usuario.html">Inicio</a>
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contacto</a>
+                    </nav>
+        </div>
+    </header>
+	    <div class="capa">
+            <input type="checkbox" id="btn-menu">
+                <div class="container-menu">
+                    <div class="cont-menu">
+                        <nav>
+                            <a href="graficas.html">Graficas</a>
+                            <a href="estadisticas.html">Estadisticas</a>
+                            <a href="chat.html">Chat</a>
+                            <a href="medicamentos.html">Medicamentos</a>
+                            <a href="/cerrar-session">Cerrar Sesión</a>
+                        </nav>
+                            <label for="btn-menu">✖️</label>
+                    </div>
+                </div>
+        </div>
+        <div class="chatbot">
+            <df-messenger
+                intent="WELCOME"
+                chat-title="Groot"
+                agent-id="3cea75fc-8229-4e3f-930f-084063c0ab6f"
+                language-code="es">
+            </df-messenger>
+        </div>
+        <div class="body-app">
+            <div class="app">
+                <div class="screen chat-screen active">
+                    <div class="top">
+                        <div class="loguito">Chat</div>
+                    </div>
+                    <div class="messages">
+                        
+                    </div>
+                    <form id="typebox">
+                        <input type="text" id="message-input">
+                        <button type="submit" id="send-message">Send</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <script type="text/javascript" src="socket.io/socket.io.js"></script>
+            <script type="text/javascript" src="javascripts/chat.js"></script>
+        </body>
+    </body>
+</html>

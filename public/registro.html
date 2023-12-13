@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>DreamCode</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheets/registro.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form method="post" action="/registrar">
+                <h1>Registro</h1>
+                <div class="input-box">
+                    <input type="text" name="usuario" placeholder="Usuario" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="correo" placeholder="Correo Electronico" required>
+                    <i class='bx bxl-gmail'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="contra" placeholder="Contraseña" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <div class="select-box">
+                    <select name = "tipo" id="combo" placeholder="Tipo" required>
+                        <option value ="Seleccionar" disabled selected>Seleccione el tipo de diabetes</option>
+                        <option value ="Tipo 1">Tipo 1</option>
+                        <option value ="Tipo 2">Tipo 2</option>
+                        <option value ="Gestacional">Gestacional</option>
+                    </select>
+                </div>  
+                <button type="submit" class="btn">Registrar</button>
+            </form>
+        </div>
+    </body>
+</html>

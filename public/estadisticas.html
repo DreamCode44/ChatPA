@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+        <link rel="stylesheet" href="stylesheets/estadisticas.css">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+                <div class="logo">
+                    <h1>Insucare</h1>
+                </div>
+                    <nav class="menu">
+                        <a href="usuario.html">Inicio</a>
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contacto</a>
+                    </nav>
+        </div>
+    </header>
+	<div class="capa"></div>
+        <input type="checkbox" id="btn-menu">
+            <div class="container-menu">
+                <div class="cont-menu">
+                    <nav>
+                        <a href="graficas.html">Graficas</a>
+                        <a href="estadisticas.html">Estadisticas</a>
+                        <a href="chat.html">Chat</a>
+                        <a href="medicamentos.html">Medicamentos</a>
+                        <a href="/cerrar-session">Cerrar Sesión</a>
+                    </nav>
+                        <label for="btn-menu">✖️</label>
+                </div>
+            </div>
+            <div class="chatbot">
+                <df-messenger
+                    intent="WELCOME"
+                    chat-title="Groot"
+                    agent-id="3cea75fc-8229-4e3f-930f-084063c0ab6f"
+                    language-code="es">
+                </df-messenger>
+            </div>
+            <div class="estadistica">
+                <div class="container-estadistica">
+                        <h1>Estadisticas</h1>
+                        <img src="images/estadistica.png">
+                </div>
+            </div>
+    </body>
+</html>

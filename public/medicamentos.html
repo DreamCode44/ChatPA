@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+        <link rel="stylesheet" href="stylesheets/graficas.css">
+        <link rel="stylesheet" href="stylesheets/main.css">
+        <link rel="stylesheet" href="stylesheets/button.css">
+        <link rel="stylesheet" href="stylesheets/records.css">
+        <link rel="stylesheet" href="stylesheets/modal.css">
+        <script src="code.js" defer></script>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+                <div class="logo">
+                    <h1>Insucare</h1>
+                </div>
+                    <nav class="menu">
+                        <a href="usuario.html">Inicio</a>
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contacto</a>
+                    </nav>
+        </div>
+    </header>
+        <input type="checkbox" id="btn-menu">
+            <div class="container-menu">
+                <div class="cont-menu">
+                    <nav>
+                        <a href="graficas.html">Graficas</a>
+                        <a href="estadisticas.html">Estadisticas</a>
+                        <a href="chat.html">Chat</a>
+                        <a href="medicamentos.html">Medicamentos</a>
+                        <a href="/cerrar-session">Cerrar Sesión</a>
+                    </nav>
+                        <label for="btn-menu">✖️</label>
+                </div>
+            </div>
+            <div class="chatbot">
+                <df-messenger
+                    intent="WELCOME"
+                    chat-title="Groot"
+                    agent-id="3cea75fc-8229-4e3f-930f-084063c0ab6f"
+                    language-code="es">
+                </df-messenger>
+            </div>
+            <main>
+                <button type="button" class="button blue mobile" id="cadastrarCliente">Agregar</button>
+                <table class="records">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Dosis</th>
+                            <th>Horarios</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Paracetamol</td>
+                            <td>2 pastillas</td>
+                            <td>cada 8 horas</td>
+                            <td>
+                                <button type="button" class="button green">editar</button>
+                                <button type="button" class="button red">excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ibuprofeno</td>
+                            <td>1 pastilla</td>
+                            <td>cada 12 horas</td>
+                            <td>
+                                <button type="button" class="button green">editar</button>
+                                <button type="button" class="button red">excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Loratadina</td>
+                            <td>2 pastillas</td>
+                            <td>cada 8 horas</td>
+                            <td>
+                                <button type="button" class="button green">editar</button>
+                                <button type="button" class="button red">excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <header class="modal-header">
+                            <h2>Novo Cliente</h2>
+                            <span class="modal-close" id="modalClose">&#10006;</span>
+                        </header>
+                        <form class="modal-form">
+                            <input type="text" class="nombre" placeholder="Nombre">
+                            <input type="text" class="dosis" placeholder="Dosis">
+                            <input type="text" class="horario" placeholder="Horario">
+                        </form>
+                        <footer class="modal-footer">
+                            <button class="button green">Salvar</button>
+                            <button class="button blue">Cancelar</button>
+                        </footer>
+                    </div>
+                </div>
+            </main>
+    </body>
+</html>
