@@ -23,8 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 io.on('connection', (socket) => {
-    const cookies = cookie.parse(socket.handshake.headers.cookie);
-    const username = cookies.usuario || "Anónimo"
+    let username = "Anónimo";
+    if (socket.handshake.headers.cookie) {
+        const cookies = cookie.parse(socket.handshake.headers.cookie);
+        username = cookies.usuario || "Anónimo";
+    }
 
     socket.emit("chat message", `Bienvenido, ${username}`)
     if (cookies.tipo === '2') {

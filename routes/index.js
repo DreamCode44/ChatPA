@@ -29,11 +29,9 @@ router.post("/inicio-sesion", async (req, res) => {
 
     if (contra === decryptedPassword) {
       res.cookie("usuario", inicioSesion.usuario, {
-        secure: true,
         httpOnly: true
       })
       res.cookie("tipo", 1, {
-        secure: true,
         httpOnly: true
       })
       return res.redirect("usuario.html")
@@ -42,11 +40,9 @@ router.post("/inicio-sesion", async (req, res) => {
     const doctor = await Doctor.findOne({ where: { [Op.or]: [{ correo: enter }, { usuario: enter }], contra: contra } });
     if (doctor) {
       res.cookie("usuario", doctor.usuario, {
-        secure: true,
         httpOnly: true
       })
       res.cookie("tipo", 2, {
-        secure: true,
         httpOnly: true
       })
       return res.redirect("medico.html");
