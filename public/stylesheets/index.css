@@ -146,20 +146,20 @@ header nav li{
 
 @keyframes change{
     0%{
-    background-image: url('images/fondo.png');
+    background-image: url('../images/fondo.png');
     }
     25%{
-       background-image: url('images/fondo.png');
+       background-image: url('../images/fondo.png');
     }
     50%{
-        background-image: url('images/fondo.png');
+        background-image: url('../images/fondo.png');
         
     }
     75%{
-        background-image: url('images/fondo.png');
+        background-image: url('../images/fondo.png');
     }
     100%{
-        background-image: url('images/fondo.png');
+        background-image: url('../images/fondo.png');
         
     }
 }
