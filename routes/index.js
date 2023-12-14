@@ -36,7 +36,7 @@ router.post("/inicio-sesion", async (req, res) => {
         secure: true,
         httpOnly: true
       })
-      return res.redirect("/usuario.html")
+      return res.redirect("usuario.html")
     }
   } else {
     const doctor = await Doctor.findOne({ where: { [Op.or]: [{ correo: enter }, { usuario: enter }], contra: contra } });
@@ -49,10 +49,10 @@ router.post("/inicio-sesion", async (req, res) => {
         secure: true,
         httpOnly: true
       })
-      return res.redirect("/medico.html");
+      return res.redirect("medico.html");
     }
   }
-  return res.redirect("/inicio.html")
+  return res.redirect("inicio.html")
 })
 
 router.post("/registrar", async (req, res) => {
@@ -80,13 +80,13 @@ router.post("/registrar", async (req, res) => {
     clave_maestra: claveAleatoria.toString('base64'),
   });
 
-  res.redirect('/inicio.html');
+  res.redirect('inicio.html');
 })
 
 router.get("/cerrar-session", (req, res) => {
   res.clearCookie("usuario")
   res.clearCookie("tipo")
-  res.redirect('/');
+  res.redirect('index.html');
 })
 
 module.exports = router;
