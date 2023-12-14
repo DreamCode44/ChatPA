@@ -24,13 +24,15 @@ app.use('/', indexRouter);
 
 io.on('connection', (socket) => {
     let username = "Anónimo";
+    let tipo = "1";
     if (socket.handshake.headers.cookie) {
         const cookies = cookie.parse(socket.handshake.headers.cookie);
         username = cookies.usuario || "Anónimo";
+        tipo = cookies.tipo || "1";
     }
 
     socket.emit("chat message", `Bienvenido, ${username}`)
-    if (cookies.tipo === '2') {
+    if (tipo === '2') {
         // Doctor
         doctors[username] = socket;
         socket.on('chat message', (msg) => {
