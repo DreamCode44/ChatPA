@@ -1,12 +1,12 @@
 const express = require('express');
-const { createServer } = require("node:http/ChatPA/")
+const { createServer } = require("node:http")
 const path = require('path');
 const cookie = require("cookie")
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const { Server } = require('socket.io');
 
-const indexRouter = require('./routes/index/ChatPA/');
+const indexRouter = require('./routes/index');
 
 const app = express();
 const server = createServer(app);

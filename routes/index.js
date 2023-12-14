@@ -1,12 +1,12 @@
 const express = require('express');
 const crypto = require('crypto');
 const { Op } = require('sequelize');
-const Doctor = require('../models/Doctor/ChatPA/')
-const InicioSesion = require('../models/InicioSesion/ChatPA/')
+const Doctor = require('../models/Doctor')
+const InicioSesion = require('../models/InicioSesion')
 
 const router = express.Router();
 
-router.post("/inicio-sesion/ChatPA/", async (req, res) => {
+router.post("/inicio-sesion", async (req, res) => {
   const { enter, contra } = req.body
 
   const inicioSesion = await InicioSesion.findOne({ where: { [Op.or]: [{ correo: enter }, { usuario: enter }], } });
@@ -36,7 +36,7 @@ router.post("/inicio-sesion/ChatPA/", async (req, res) => {
         secure: true,
         httpOnly: true
       })
-      return res.redirect("/usuario.html/ChatPA/")
+      return res.redirect("/usuario.html")
     }
   } else {
     const doctor = await Doctor.findOne({ where: { [Op.or]: [{ correo: enter }, { usuario: enter }], contra: contra } });
@@ -49,13 +49,13 @@ router.post("/inicio-sesion/ChatPA/", async (req, res) => {
         secure: true,
         httpOnly: true
       })
-      return res.redirect("/medico.html/ChatPA/");
+      return res.redirect("/medico.html");
     }
   }
-  return res.redirect("/inicio.html/ChatPA/")
+  return res.redirect("/inicio.html")
 })
 
-router.post("/registrar/ChatPA/", async (req, res) => {
+router.post("/registrar", async (req, res) => {
   const { usuario, correo, contra, tipo } = req.body
 
   // Generar clave aleatoria para cifrado de contraseñas
@@ -80,10 +80,10 @@ router.post("/registrar/ChatPA/", async (req, res) => {
     clave_maestra: claveAleatoria.toString('base64'),
   });
 
-  res.redirect('/inicio.html/ChatPA/');
+  res.redirect('/inicio.html');
 })
 
-router.get("/cerrar-session/ChatPA/", (req, res) => {
+router.get("/cerrar-session", (req, res) => {
   res.clearCookie("usuario")
   res.clearCookie("tipo")
   res.redirect('/');
