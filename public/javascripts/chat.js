@@ -2,7 +2,9 @@
 const form = document.querySelector("#typebox")
 const input = document.querySelector("#message-input")
 const messages = document.querySelector(".messages")
-const socket = io();
+const socket = io({
+    path: "/ChatPA/socket.io/"
+});
 
 form.addEventListener("submit", ev => {
     ev.preventDefault()
